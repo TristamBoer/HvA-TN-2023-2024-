@@ -60,7 +60,7 @@ golflengtes_onbekende_lamp2 = find_peaks(onbekende_lamp2, height=5000)[0]
 
 
 # Berekenen constanten (a en b) fit vergelijking
-frames = np.linspace(0, 250, num=1000)
+frames = np.linspace(0, 250, num=250)
 x1 = np.array(golflengtes_Kwik_meting3)
 y1 = np.array([Kwiklamp.golflengte_paars, Kwiklamp.golflengte_paars, Kwiklamp.golflengte_groen,
                Kwiklamp.golflengte_groen, Kwiklamp.golflengte_geel, Kwiklamp.golflengte_geel])
@@ -108,14 +108,14 @@ data_analyse(onbekende_golflengte)
 
 # Plotten van alle figuren
 fig1 = plt.figure()
-plt.plot(LED_meting1, color='blue', label='meting 1')
-plt.plot(LED_meting2, color='red', label='meting 2', alpha=0.6)
-plt.plot(LED_meting3, color='yellow', label='meting 3')
-plt.xlabel('Frames [-]', weight='bold')
+plt.plot(ijklijn*1e9, LED_meting1, color='blue', label='meting 1')
+plt.plot(ijklijn*1e9, LED_meting2, color='red', label='meting 2', alpha=0.6)
+plt.plot(ijklijn*1e9, LED_meting3, color='green', label='meting 3')
+plt.xlabel('Golflengte [nm]', weight='bold')
 plt.ylabel('Intensiteit [a.u]', weight='bold')
 plt.title("Intensiteit LED lamp", weight='bold')
-plt.tight_layout()
 plt.legend()
+plt.tight_layout()
 
 fig2 = plt.figure()
 plt.plot(Kwik_meting1, color='blue', label='meting 1')
@@ -123,13 +123,13 @@ plt.plot(Kwik_meting2, color='red', label='meting 2')
 plt.xlabel('Frames [-]', weight='bold')
 plt.ylabel('Intensiteit [a.u]', weight='bold')
 plt.title("Intensiteit Kwik lamp", weight='bold')
-plt.tight_layout()
 plt.legend()
+plt.tight_layout()
 
 fig3 = plt.figure()
-plt.plot(onbekende_lamp1, color='blue', label='meting 1')
-plt.plot(onbekende_lamp2, color='red', label='meting 2', alpha=0.7)
-plt.xlabel('Frames [-]', weight='bold')
+plt.plot(ijklijn*1e9, onbekende_lamp1, color='blue', label='meting 1')
+plt.plot(ijklijn*1e9, onbekende_lamp2, color='red', label='meting 2', alpha=0.7)
+plt.xlabel('Golflengte [nm]', weight='bold')
 plt.ylabel('Intensiteit [a.u]', weight='bold')
 plt.title("Intensiteit onbekende lamp", weight='bold')
 plt.legend()
@@ -147,9 +147,7 @@ plt.tight_layout()
 
 
 if __name__ == '__main__':
-    fig1.show()
+    # fig1.show()
     fig2.show()
-    fig3.show()
-    fig4.show()
-
-    print(q7)
+    # fig3.show()
+    # fig4.show()
