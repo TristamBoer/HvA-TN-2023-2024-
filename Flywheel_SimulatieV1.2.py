@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Mar 31 15:56:37 2024
-
-@author: denni
-"""
-
 import numpy as np 
 import matplotlib.pyplot as plt 
 from numpy import sin
