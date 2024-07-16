@@ -147,7 +147,7 @@ plt.tight_layout()
 
 
 if __name__ == '__main__':
-    # fig1.show()
+    fig1.show()
     fig2.show()
-    # fig3.show()
-    # fig4.show()
+    fig3.show()
+    fig4.show()
